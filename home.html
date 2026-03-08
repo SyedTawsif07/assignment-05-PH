@@ -35,9 +35,9 @@
         <!-- All, open, closed buttons -->
         <section class=" bg-base-100 shadow-sm bg-base-200 p-8 mb-5">
             <div class="flex justify-center lg:justify-start space-x-4">
-                <button class="btn btn-primary text-white">All</button>
-                <button class="btn">Open</button>
-                <button class="btn">Closed</button>
+                <button onclick="toggleStyle('all-btn')" id="all-btn" class="btn btn-primary text-white">All</button>
+                <button onclick="toggleStyle('open-btn')" id="open-btn" class="btn">Open</button>
+                <button onclick="toggleStyle('closed-btn')" id="closed-btn" class="btn">Closed</button>
             </div>
         </section>
 
@@ -62,10 +62,10 @@
             <hr class="my-6">
 
             <!-- All Cards -->
-            <div class="card-container mx-8 grid grid-cols-4 gap-3">
+            <div id="card-container" class="mx-8 grid grid-cols-4 gap-3">
 
                 <!-- card 1 -->
-                <div class="text-start p-6 space-y-6 rounded-xl shadow bg-base-200">
+                <!-- <div class="text-start p-6 space-y-6 rounded-xl shadow bg-base-200">
                     <div class="flex justify-between">
                         <img src="./assets/Open-Status.png" alt="">
                         <p class="font-bold">High</p>
@@ -74,7 +74,7 @@
                     <h3 class="font-semibold text-xl">Fix navigation menu on mobile devices</h3>
                     <p class="text-gray-500">The navigation menu doesn't collapse properly on mobile
                         devices...</p>
-                        
+
                     <div class="space-x-3">
                         <span
                             class="bg-red-200 text-[12px] py-1 px-3 rounded-[15px] text-red-500 font-medium border">BUG</span>
@@ -87,11 +87,13 @@
                         <p class="text-gray-500 text-[12px]">#1 by john_doe</p>
                         <p class="text-gray-500 text-[12px]">1/15/2024</p>
                     </div>
-                </div>
-                
+                </div> -->
+
             </div>
         </section>
     </main>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
