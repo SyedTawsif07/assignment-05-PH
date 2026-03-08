@@ -17,7 +17,81 @@
 </head>
 
 <body>
-    <h1>Hello world</h1>
+    <header class="mb-8">
+        <div class="navbar bg-base-100 shadow-sm">
+            <div class="flex-1">
+                <h2 class="btn-ghost text-2xl font-bold">GitHub Issues TrackeryUI</h2>
+            </div>
+
+
+            <div class="flex gap-2">
+                <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+                <button class="btn btn-primary text-[18px]">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full lg:w-[80%] mx-auto">
+        <!-- All, open, closed buttons -->
+        <section class=" bg-base-100 shadow-sm bg-base-200 p-8 mb-5">
+            <div class="flex justify-center lg:justify-start space-x-4">
+                <button class="btn btn-primary text-white">All</button>
+                <button class="btn">Open</button>
+                <button class="btn">Closed</button>
+            </div>
+        </section>
+
+        <section class=" bg-base-100py-5 py-5  shadow bg-base-300">
+            <div class="flex justify-between items-center mx-8">
+                <div class="flex gap-3">
+                    <div class="flex items-center">
+                        <img class="border-8 border-[#4A00FF50] rounded-full" src="./assets/Aperture.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-2xl">0 Issues</h3>
+                        <p class="text-gray-500">Track and manage your project issues</p>
+                    </div>
+                </div>
+
+                <div class="space-x-3">
+                    <span class="font-semibold text-[#00A96E]">Open</span>
+                    <span class="font-semibold text-[#A855F7]">Closed</span>
+                </div>
+            </div>
+
+            <hr class="my-6">
+
+            <!-- All Cards -->
+            <div class="card-container mx-8 grid grid-cols-4 gap-3">
+
+                <!-- card 1 -->
+                <div class="text-start p-6 space-y-6 rounded-xl shadow bg-base-200">
+                    <div class="flex justify-between">
+                        <img src="./assets/Open-Status.png" alt="">
+                        <p class="font-bold">High</p>
+                    </div>
+
+                    <h3 class="font-semibold text-xl">Fix navigation menu on mobile devices</h3>
+                    <p class="text-gray-500">The navigation menu doesn't collapse properly on mobile
+                        devices...</p>
+                        
+                    <div class="space-x-3">
+                        <span
+                            class="bg-red-200 text-[12px] py-1 px-3 rounded-[15px] text-red-500 font-medium border">BUG</span>
+                        <span
+                            class="bg-[#FDE68A] text-[12px] py-1 px-3 rounded-[15px] text-[#D97706] font-medium border">HELP
+                            WANTED</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <p class="text-gray-500 text-[12px]">#1 by john_doe</p>
+                        <p class="text-gray-500 text-[12px]">1/15/2024</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
