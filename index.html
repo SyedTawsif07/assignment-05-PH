@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issues Tracker</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind and DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="shadow-sm min-h-[90vh] max-w-md mx-auto mt-8 border p-8">
+    <section class="my-8">
+        <div class="space-y-4">
+            <div class="flex justify-center">
+                <img src="./assets/github-logo.png" alt="">
+            </div>
+            <div class="text-center">
+                <h3 class="font-semibold text-2xl">GitHub Issues Tracker</h3>
+                <p class="text-gray-500">Sign in to manage your issues</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login section -->
+    <section class="flex justify-center">
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full py-8 px-4 space-y-">
+
+            <label class="label font-medium text-black">Username</label>
+            <input type="email" id="user-name" class="input w-full" placeholder="Enter Username" value="admin" />
+
+            <br>
+
+            <label class="label font-medium text-black">Password</label>
+            <input type="password" id="user-password" class="input w-full" placeholder="Enter Password" />
+
+            <button id="form-btn" class="btn btn-primary mt-4">Login</button>
+        </fieldset>
+    </section>
+
+    <script src="./login.js"></script>
+</body>
+
+</html>
