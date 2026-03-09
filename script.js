@@ -133,7 +133,7 @@ const displayIssues = (cards) => {
     cards.forEach(card => {
         const newDiv = document.createElement('div');
         newDiv.innerHTML = `
-                <div onclick="loadModalDetail(${card.id})" class="h-full flex-col text-start p-6 space-y-6 rounded-xl shadow bg-base-200">
+                <div onclick="loadModalDetail(${card.id})" class="h-full flex-col text-start p-6 space-y-6 rounded-2xl shadow bg-base-200 border-t-4 ${card.status === 'open' ? 'border-[#00A96E]' : 'border-[#A855F7]'}">
                     <div class="flex justify-between">
                         <img src="${card.status === 'open' ? './assets/Open-Status.png' : './assets/Closed-Status.png'}" alt="">
                        <p class="${card.priority === 'high' ? 'bg-[#FEECEC] text-[#EF4444]' :
