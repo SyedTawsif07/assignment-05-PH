@@ -64,13 +64,14 @@ const displayModalDetail = (details) => {
                             <div class="flex justify-between items-center bg-base-300 py-2 px-4 rounded-xl">
                                 <div class="space-y-1">
                                     <p class="text-gray-500">Assigne:</p>
-                                    <p class="font-semibold">Tawsif Sir</p>
+                                    <p class="font-semibold">${details.assignee}</p>
                                 </div>
                                 <div class="space-y-1">
                                     <p class="text-gray-500">Priority:</p>
-                                    <p
-                                        class="border bg-red-500 text-white text-[12px] rounded-[15px] px-2 py-1 text-center">
-                                        High</p>
+                                    <p class="${details.priority === 'high' ? 'bg-red-500 text-white' :
+            details.priority === 'medium' ? 'bg-[#ffcc00] text-white' :
+                details.priority === 'low' ? 'bg-gray-500 text-white' :
+                    'bg-gray-200 text-gray-500'} text-center text-[12px] rounded-[15px] px-2 py-1">${details.priority.toUpperCase()}</p>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +124,7 @@ const displayLesson = (cards) => {
     cards.forEach(card => {
         const newDiv = document.createElement('div');
         newDiv.innerHTML = `
-                <div onclick="loadModalDetail(${card.id})" class="text-start p-6 space-y-6 rounded-xl shadow bg-base-200">
+                <div onclick="loadModalDetail(${card.id})" class="h-full flex-col text-start p-6 space-y-6 rounded-xl shadow bg-base-200">
                     <div class="flex justify-between">
                         <img src="${card.status === 'open' ? './assets/Open-Status.png' : './assets/Closed-Status.png'}" alt="">
                        <p class="${card.priority === 'high' ? 'bg-[#FEECEC] text-[#EF4444]' :
