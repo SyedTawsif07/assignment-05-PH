@@ -35,9 +35,11 @@
         <!-- All, open, closed buttons -->
         <section class=" bg-base-100 shadow-sm bg-base-200 p-8 mb-5">
             <div class="flex justify-center lg:justify-start space-x-4">
-                <button onclick="toggleStyle('all-btn')" id="all-btn" class="btn btn-primary text-white">All</button>
-                <button onclick="toggleStyle('open-btn')" id="open-btn" class="btn">Open</button>
-                <button onclick="toggleStyle('closed-btn')" id="closed-btn" class="btn">Closed</button>
+                <button onclick="toggleStyle('all-btn'), filterIssues('all')" id="all-btn"
+                    class="btn btn-primary text-white">All</button>
+                <button onclick="toggleStyle('open-btn'), filterIssues('open')" id="open-btn" class="btn">Open</button>
+                <button onclick="toggleStyle('closed-btn'), filterIssues('closed')" id="closed-btn"
+                    class="btn">Closed</button>
             </div>
         </section>
 
@@ -48,7 +50,7 @@
                         <img class="border-8 border-[#4A00FF50] rounded-full" src="./assets/Aperture.png" alt="">
                     </div>
                     <div>
-                        <h3 class="font-semibold text-2xl">0 Issues</h3>
+                        <h3 class="font-semibold text-2xl"><span id="total-issue">0</span> Issues</h3>
                         <p class="text-gray-500">Track and manage your project issues</p>
                     </div>
                 </div>
@@ -62,13 +64,13 @@
             <hr class="my-6">
 
             <!-- All Cards -->
-            <div id="card-container" class="mx-8 grid grid-cols-4 gap-3">
+            <div id="card-container" class="mx-8 grid grid-cols-1 md:grid-cols-4 gap-3">
 
                 <!-- card 1 -->
                 <!-- <div class="text-start p-6 space-y-6 rounded-xl shadow bg-base-200">
                     <div class="flex justify-between">
                         <img src="./assets/Open-Status.png" alt="">
-                        <p class="font-bold">High</p>
+                        <p class="text-[12px] text-red-500 bg-red-200 rounded-[15px] px-2 py-1">High</p>
                     </div>
 
                     <h3 class="font-semibold text-xl">Fix navigation menu on mobile devices</h3>
@@ -86,11 +88,57 @@
                     <div class="space-y-4">
                         <p class="text-gray-500 text-[12px]">#1 by john_doe</p>
                         <p class="text-gray-500 text-[12px]">1/15/2024</p>
-                    </div>
-                </div> -->
+                    </div> -->
+
+
 
             </div>
         </section>
+
+
+        <!-- You can open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_4.showModal()">open modal</button> -->
+        <dialog id="details_modal" class="modal">
+            <div class="modal-box w-11/12 max-w-5xl">
+                <div id="details-container" class="">
+
+                    <div class="">
+                        <div class="text-start p-6 space-y-6 rounded-xl shadow bg-base-200">
+                            <h3 class="font-semibold text-xl">Fix navigation menu on mobile devices</h3>
+                            <p class="text-[14px] text-gray-500"><span>Opened</span> • Opened by Fahim Ahmed •
+                                22/02/2026</p>
+                            <div class="space-x-3">
+                                <span
+                                    class="bg-red-200 text-[12px] py-1 px-2 rounded-[15px] text-red-500 border">BUG</span>
+                                <span
+                                    class="bg-[#FDE68A] text-[12px] py-1 px-2 rounded-[15px] text-[#D97706] border">HELP
+                                    WANTED</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-base-300 py-2 px-4 rounded-xl">
+                                <div class="space-y-1">
+                                    <p class="text-gray-500">Assigne:</p>
+                                    <p class="font-semibold">Tawsif Sir</p>
+                                </div>
+                                <div class="space-y-1">
+                                    <p class="text-gray-500">Priority:</p>
+                                    <p
+                                        class="border bg-red-500 text-white text-[12px] rounded-[15px] px-2 py-1 text-center">
+                                        High</p>
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
     </main>
 
     <script src="./script.js"></script>
