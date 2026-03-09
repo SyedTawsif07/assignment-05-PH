@@ -1,5 +1,14 @@
 let allIssues = [];
 
+const manageSpinner = (status) => {
+    if (status == true) {
+        document.getElementById('spinner').classList.remove('hidden')
+        document.getElementById('card-container').classList.add('hidden')
+    } else {
+        document.getElementById('card-container').classList.remove('hidden')
+        document.getElementById('spinner').classList.add('hidden')
+    }
+}
 
 function toggleStyle(id) {
     const allBtn = document.getElementById('all-btn');
@@ -15,6 +24,7 @@ function toggleStyle(id) {
 }
 
 const loadIssues = () => {
+    manageSpinner(true);
     fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
         .then(res => res.json())
         .then(data => {
@@ -114,7 +124,6 @@ const totalIssues = () => {
 //     "updatedAt": "2024-01-15T10:30:00Z"
 // }
 
-
 const displayLesson = (cards) => {
     // 1. call the container & empt
     const cardContainer = document.getElementById('card-container');
@@ -149,7 +158,7 @@ const displayLesson = (cards) => {
         cardContainer.append(newDiv);
     });
     totalIssues();
+    manageSpinner();
 }
-
 
 loadIssues();
