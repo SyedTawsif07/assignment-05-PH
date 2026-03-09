@@ -1,0 +1,21 @@
+1. What is the difference between var, let, and const?
+=> 
+    a. var is the old way to store value and we can access it from inside and outside the function.
+    b. let is the modern way we can store the value and change the value and we cannot access it from outside the function.
+    c. const is fully blocked scope and we cannot access it from outside the function and cannot change the value.
+
+2. What is the spread operator (...)?
+=> The spread operator expand the values inside of an array or object.
+
+3. What is the difference between map(), filter(), and forEach()?
+=>  Their work is loop through inside an array but they do different things,
+
+    a.forEach: It loop through every number and prints the result  but does not create new array.
+    b.map(): It changes every element and creates new array.
+    c.filter: It filters the result based on conditions.
+
+4.  What is an arrow function?
+=> arrow function is modern and shorter way to write functions.
+
+5. What are template literals?
+=> Template literals is a powerful thing in JS. It allows variables and expressions inside and can span multiple lines.
