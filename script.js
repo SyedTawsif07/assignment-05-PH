@@ -29,7 +29,7 @@ const loadIssues = () => {
         .then(res => res.json())
         .then(data => {
             allIssues = data.data;
-            displayLesson(allIssues);
+            displayIssues(allIssues);
         });
 }
 
@@ -94,11 +94,11 @@ const displayModalDetail = (details) => {
 
 const filterIssues = (status) => {
     if (status === 'all') {
-        displayLesson(allIssues)
+        displayIssues(allIssues)
         return
     }
     const filtered = allIssues.filter(issue => issue.status === status);
-    displayLesson(filtered);
+    displayIssues(filtered);
 }
 
 const totalIssues = () => {
@@ -124,7 +124,7 @@ const totalIssues = () => {
 //     "updatedAt": "2024-01-15T10:30:00Z"
 // }
 
-const displayLesson = (cards) => {
+const displayIssues = (cards) => {
     // 1. call the container & empt
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = "";
@@ -162,3 +162,17 @@ const displayLesson = (cards) => {
 }
 
 loadIssues();
+
+document.getElementById('btn-search').addEventListener('click', () => {
+    const input = document.getElementById('input-search');
+    const searchValue = input.value.trim().toLowerCase();
+    console.log(searchValue);
+
+    fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
+        .then(res => res.json())
+        .then((data) => {
+            const allCards = data.data;
+            const filterCards = allCards.filter(card => card.title.toLowerCase().includes(searchValue));
+            displayIssues(filterCards);
+        });
+});
